@@ -59,6 +59,8 @@ function pickRandomColor(uint256 tokenId) public view returns (string memory) {
 
   function makeACactusNFT() public {
     uint256 newItemId = _tokenIds.current();
+    
+require(newItemId < 51, "50 NFTs have already been minted. No more are available.");
 
     string memory first = pickRandomFirstWord(newItemId);
     string memory second = pickRandomSecondWord(newItemId);
